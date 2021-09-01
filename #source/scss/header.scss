@@ -1,0 +1,139 @@
+header{
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(180deg, #181717, rgba(24,23,23,0));
+  height: 150px;
+  z-index: 14;
+  @media(max-width: 768px){
+    &.changeBg{
+      background: #181717;
+      height: 100%;
+      position: fixed;
+    }
+  }
+
+}
+.container{
+  max-width: 1320px;
+  position: relative;
+  margin: 0 auto;
+}
+.header-body{
+  padding: 20px 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.header-column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.header-logo {
+  
+
+}
+.logo_img img{
+  @media(max-width:1000px){
+    width: 250px;
+  }
+  @media(max-width:768px){
+    width: 190px;
+  }
+}
+.header-menu {
+
+}
+.menu-item {
+  font-family: 'Squada One';
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  @media(max-width:768px){
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 170px;
+    left: -150px;
+  }
+}
+.menu-item a {
+  color: #fff;
+  padding: 0 57px 0 0;
+  &:last-child{
+    padding: 0 0 0 0;
+  }
+  &:hover{
+    text-decoration: underline;
+  }
+  @media(max-width:1000px){
+    padding: 0 25px 0 0;
+  }
+
+  @media(max-width: 768px){
+    padding: 0 25px 25px 0;
+    display: inline-block;
+    margin: 0 0 0 35px;
+  }
+
+}
+
+
+
+
+
+//=======Burger=================//
+.header-menu__icon{
+  display: none;
+}
+@media(max-width: 767.99px){
+  .header-menu__icon{
+    display: block;
+    position: absolute;
+    top: 36px;
+    right:25px;
+    z-index: 4;
+    width: 38px;
+    height: 27px;
+    cursor: pointer;
+    span{
+      position: absolute;
+      top: 12px;
+      right: 0px;
+      width: 100%;
+      background-color: #fff;
+      height: 3px;
+      transition-duration: 0.5s;
+      transition-timing-function: lineral;
+      &:first-child{top: 0px}
+      &:last-child{top:auto; bottom: 0px;}
+    }
+  }
+  .active{
+    span{
+      transform: scale(0);
+      &:first-child{
+        transition-duration: 0.5s;
+        transition-timing-function: lineral;
+        transform: rotate(45deg);
+        top: 12px;
+      }
+      &:last-child{
+        transition-duration: 0.5s;
+        transition-timing-function: lineral;
+        transform: rotate(-45deg);
+        bottom: 12px;
+      }
+    }
+    & .menu-item{
+      transition-duration: 0.5s;
+      transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+      left: 100px;
+    }
+  }
+}
+
+
